@@ -1,8 +1,12 @@
-body {
-    font-family: Arial, sans-serif;
+/* Basic Reset */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
     background-color: #f4f4f4;
     color: #333;
 }
@@ -10,12 +14,21 @@ body {
 header {
     background-color: #4CAF50;
     color: white;
-    padding: 1rem 0;
+    padding: 2rem 0;
     text-align: center;
 }
 
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+header p {
+    margin: 0.5rem 0 0;
+}
+
 nav {
-    background-color: #333;
+    margin-top: 1rem;
 }
 
 nav ul {
@@ -24,41 +37,167 @@ nav ul {
     margin: 0;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 nav ul li {
-    margin: 0;
+    margin: 0.5rem;
 }
 
 nav ul li a {
     color: white;
-    padding: 1rem;
-    display: block;
+    padding: 0.5rem 1rem;
     text-decoration: none;
+    background-color: #333;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s;
 }
 
 nav ul li a:hover {
     background-color: #575757;
 }
 
-main {
-    padding: 2rem;
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0;
 }
 
 h2 {
     color: #4CAF50;
+    font-size: 2rem;
+    margin-bottom: 1rem;
 }
 
-section {
+.timeline {
+    position: relative;
+    padding: 1rem 0;
+}
+
+.timeline-item {
     margin-bottom: 2rem;
 }
 
+.timeline-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-item span {
+    display: block;
+    color: #666;
+}
+
+.project-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.card {
+    background-color: white;
+    border-radius: 0.25rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    width: calc(50% - 2rem);
+}
+
+.card h3 {
+    margin-top: 0;
+}
+
+.skills-list {
+    list-style: none;
+    padding: 0;
+}
+
+.skills-list li {
+    background-color: white;
+    border-radius: 0.25rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+}
+
 footer {
-    background-color: #333;
+    background-color: #4CAF50;
     color: white;
     text-align: center;
     padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Back to top button */
+#back-to-top {
+    display: none;
     position: fixed;
-    width: 100%;
-    bottom: 0;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#back-to-top i {
+    font-size: 1.5rem;
+}
+
+/* Animations */
+.fade-in {
+    opacity: 0;
+    transition: opacity 1s ease-in;
+}
+
+.fade-in.visible {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .project-cards {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .container {
+        padding: 1rem 0;
+    }
+
+    .timeline-item h3 {
+        font-size: 1.2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
 }

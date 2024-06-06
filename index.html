@@ -5,111 +5,130 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ashish Sunil Zope's Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <header>
-        <h1>Ashish Sunil Zope</h1>
-        <p>Data Engineer</p>
+        <div class="container">
+            <h1>Ashish Sunil Zope</h1>
+            <p>Data Engineer</p>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
     <main>
         <section id="about">
-            <h2>About Me</h2>
-            <p>To secure a challenging position in the field of Data where I can utilize my skills and knowledge for the growth of the organization and to enhance my professional skills.</p>
+            <div class="container">
+                <h2>About Me</h2>
+                <p>To secure a challenging position in the field of Data where I can utilize my skills and knowledge for the growth of the organization and to enhance my professional skills.</p>
+            </div>
         </section>
         <section id="education">
-            <h2>Education</h2>
-            <ul>
-                <li>
-                    <h3>Postgraduate Diploma in Big Data Analytics - PG-DBDA</h3>
-                    <p>Sunbeam Institute of Information Technology Maharashtra, March 2022</p>
-                    <p>82.38% (Grade A)</p>
-                </li>
-                <li>
-                    <h3>Bachelor of Engineering - Electrical</h3>
-                    <p>SSBT's College of Engineering & Technology Bambhori Jalgaon, North Maharashtra University Jalgaon Maharashtra, 2019</p>
-                    <p>7.8 CGPA (Distinction)</p>
-                </li>
-                <li>
-                    <h3>12th - Science</h3>
-                    <p>Mahatma Gandhi Vidyalaya and Jr. College Varangaon, 2015</p>
-                    <p>74.61%</p>
-                </li>
-                <li>
-                    <h3>10th - General</h3>
-                    <p>Gangadhar Sandu Chaudhari High School Varangaon, 2013</p>
-                    <p>86.4%</p>
-                </li>
-            </ul>
+            <div class="container">
+                <h2>Education</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h3>Postgraduate Diploma in Big Data Analytics - PG-DBDA</h3>
+                        <span>Sunbeam Institute of Information Technology Maharashtra, March 2022</span>
+                        <p>82.38% (Grade A)</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>Bachelor of Engineering - Electrical</h3>
+                        <span>SSBT's College of Engineering & Technology Bambhori Jalgaon, 2019</span>
+                        <p>7.8 CGPA (Distinction)</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>12th - Science</h3>
+                        <span>Mahatma Gandhi Vidyalaya and Jr. College Varangaon, 2015</span>
+                        <p>74.61%</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>10th - General</h3>
+                        <span>Gangadhar Sandu Chaudhari High School Varangaon, 2013</span>
+                        <p>86.4%</p>
+                    </div>
+                </div>
+            </div>
         </section>
         <section id="experience">
-            <h2>Experience</h2>
-            <ul>
-                <li>
-                    <h3>Data Engineer</h3>
-                    <p>Bajaj Finserv, Bengaluru Karnataka India</p>
-                    <p>Nov 2022 - Present · 1 yr 1 mo</p>
-                    <p>Skills: SQL Database (PostgreSQL, Microsoft SQL Server & PL/SQL), Python, PySpark, Scala, Databricks using Scala and PySpark</p>
-                    <p>Projects: POD Project: KYC EMI (PostgreSQL), ETL: Databricks (Migration of PL/SQL code into Scala or PySpark), CSR Project: Design and Building Database in PostgreSQL</p>
-                </li>
-                <li>
-                    <h3>Assistant Manager (Branch Team Leader)</h3>
-                    <p>Shriram Finance Limited, Ballarpur Maharashtra India</p>
-                    <p>Aug 2019 - Nov 2021 · 2 yrs 4 mos</p>
-                    <p>Skills: Data Analysis, Management, Leadership, Teamwork, Microsoft Excel, Data Visualization Tools</p>
-                </li>
-            </ul>
+            <div class="container">
+                <h2>Experience</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h3>Data Engineer</h3>
+                        <span>Bajaj Finserv, Bengaluru Karnataka India</span>
+                        <span>Nov 2022 - Present</span>
+                        <p>Skills: SQL Database (PostgreSQL, Microsoft SQL Server & PL/SQL), Python, PySpark, Scala, Databricks using Scala and PySpark</p>
+                        <p>Projects: POD Project: KYC EMI (PostgreSQL), ETL: Databricks (Migration of PL/SQL code into Scala or PySpark), CSR Project: Design and Building Database in PostgreSQL</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>Assistant Manager (Branch Team Leader)</h3>
+                        <span>Shriram Finance Limited, Ballarpur Maharashtra India</span>
+                        <span>Aug 2019 - Nov 2021</span>
+                        <p>Skills: Data Analysis, Management, Leadership, Teamwork, Microsoft Excel, Data Visualization Tools</p>
+                    </div>
+                </div>
+            </div>
         </section>
         <section id="projects">
-            <h2>Academic Projects</h2>
-            <ul>
-                <li>
-                    <h3>Traffic Signs Recognition</h3>
-                    <p>Mar 2022 - Aug 2022</p>
-                    <p>Developed a deep neural network model using Keras, Matplotlib, Scikit learn, Pandas, PIL, and image classification techniques to classify traffic signs present in the image into different categories.</p>
-                </li>
-                <li>
-                    <h3>Prototype of Relay-based Single Phase Voltage Stabilizer System</h3>
-                    <p>Aug 2018 - Mar 2019</p>
-                    <p>Designed a cost-effective voltage stabilizer system for domestic equipment protection. Employed a reliable technology using a microcontroller for controlling the relay circuits.</p>
-                </li>
-            </ul>
+            <div class="container">
+                <h2>Academic Projects</h2>
+                <div class="project-cards">
+                    <div class="card">
+                        <h3>Traffic Signs Recognition</h3>
+                        <span>Mar 2022 - Aug 2022</span>
+                        <p>Developed a deep neural network model using Keras, Matplotlib, Scikit learn, Pandas, PIL, and image classification techniques to classify traffic signs present in the image into different categories.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Prototype of Relay-based Single Phase Voltage Stabilizer System</h3>
+                        <span>Aug 2018 - Mar 2019</span>
+                        <p>Designed a cost-effective voltage stabilizer system for domestic equipment protection. Employed a reliable technology using a microcontroller for controlling the relay circuits.</p>
+                    </div>
+                </div>
+            </div>
         </section>
         <section id="skills">
-            <h2>Skills</h2>
-            <ul>
-                <li>Data Collection & DBMS</li>
-                <li>Python & R Programming</li>
-                <li>PL/SQL, PostgreSQL, MySQL, MS SQL</li>
-                <li>Practical Machine Learning</li>
-                <li>NoSQL</li>
-                <li>Advance Analytics using Statistics</li>
-                <li>Data Visualization Tools (Power BI, Tableau)</li>
-                <li>Linux Programming and Cloud Computing</li>
-                <li>Microsoft Excel</li>
-                <li>Big Data Technologies</li>
-                <li>Object Oriented Programming with Java 8</li>
-            </ul>
+            <div class="container">
+                <h2>Skills</h2>
+                <ul class="skills-list">
+                    <li>Data Collection & DBMS</li>
+                    <li>Python & R Programming</li>
+                    <li>PL/SQL, PostgreSQL, MySQL, MS SQL</li>
+                    <li>Practical Machine Learning</li>
+                    <li>NoSQL</li>
+                    <li>Advance Analytics using Statistics</li>
+                    <li>Data Visualization Tools (Power BI, Tableau)</li>
+                    <li>Linux Programming and Cloud Computing</li>
+                    <li>Microsoft Excel</li>
+                    <li>Big Data Technologies</li>
+                    <li>Object Oriented Programming with Java 8</li>
+                </ul>
+            </div>
         </section>
         <section id="contact">
-            <h2>Contact</h2>
-            <p>Email: <a href="mailto:ashishzope96@gmail.com">ashishzope96@gmail.com</a></p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/ashish-zope-627628169/">Ashish's LinkedIn</a></p>
-            <p>Phone: +91 7744046830</p>
+            <div class="container">
+                <h2>Contact</h2>
+                <p>Email: <a href="mailto:ashishzope96@gmail.com">ashishzope96@gmail.com</a></p>
+                <p>LinkedIn: <a href="https://www.linkedin.com/in/ashish-zope-627628169/" target="_blank">Ashish's LinkedIn</a></p>
+                <p>Phone: +91 7744046830</p>
+            </div>
         </section>
     </main>
     <footer>
-        <p>&copy; 2024 Ashish Sunil Zope</p>
+        <div class="container">
+            <p>&copy; 2024 Ashish Sunil Zope</p>
+        </div>
     </footer>
+    <button id="back-to-top"><i class="fas fa-arrow-up"></i></button>
     <script src="script.js"></script>
 </body>
 </html>

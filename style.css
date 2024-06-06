@@ -12,7 +12,7 @@ body {
 }
 
 header {
-    background-color: #4CAF50;
+    background-color: #FF9933; /* Saffron */
     color: white;
     padding: 2rem 0;
     text-align: center;
@@ -48,7 +48,7 @@ nav ul li a {
     color: white;
     padding: 0.5rem 1rem;
     text-decoration: none;
-    background-color: #333;
+    background-color: #006600; /* Green */
     border-radius: 0.25rem;
     transition: background-color 0.3s;
 }
@@ -65,7 +65,7 @@ nav ul li a:hover {
 }
 
 h2 {
-    color: #4CAF50;
+    color: #FF9933; /* Saffron */
     font-size: 2rem;
     margin-bottom: 1rem;
 }
@@ -121,7 +121,7 @@ h2 {
 }
 
 footer {
-    background-color: #4CAF50;
+    background-color: #FF9933; /* Saffron */
     color: white;
     text-align: center;
     padding: 1rem 0;
@@ -138,7 +138,7 @@ footer p {
     position: fixed;
     bottom: 2rem;
     right: 2rem;
-    background-color: #4CAF50;
+    background-color: #FF9933; /* Saffron */
     color: white;
     border: none;
     padding: 0.5rem 1rem;

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,124 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Additional Custom Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #FF9933;
+            /* Saffron */
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        header p {
+            margin: 0.5rem 0 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            margin: 0.5rem;
+        }
+
+        nav ul li a {
+            color: white;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            background-color: #006600;
+            /* Green */
+            border-radius: 0.25rem;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #575757;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+            /* Adjusted padding for better mobile view */
+            box-sizing: border-box;
+        }
+
+        h2 {
+            color: #FF9933;
+            /* Saffron */
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            /* Reduced gap for better mobile view */
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 0.25rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+            flex: 1 1 calc(50% - 1rem);
+            /* Flexible width for better mobile view */
+        }
+
+        .skills-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .skills-list li {
+            background-color: white;
+            border-radius: 0.25rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 0.5rem;
+            margin: 0.5rem;
+            flex: 1 1 calc(50% - 1rem);
+            /* Flexible width for better mobile view */
+        }
+
+        footer {
+            background-color: #FF9933;
+            /* Saffron */
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+    </style>
 </head>
+
 <body>
     <header>
         <div class="container">
@@ -29,7 +147,8 @@
         <section id="about">
             <div class="container">
                 <h2>About Me</h2>
-                <p>To secure a challenging position in the field of Data where I can utilize my skills and knowledge for the growth of the organization and to enhance my professional skills.</p>
+                <p>To secure a challenging position in the field of Data where I can utilize my skills and knowledge for
+                    the growth of the organization and to enhance my professional skills.</p>
             </div>
         </section>
         <section id="education">
@@ -67,14 +186,17 @@
                         <h3>Data Engineer</h3>
                         <span>Bajaj Finserv, Bengaluru Karnataka India</span>
                         <span>Nov 2022 - Present</span>
-                        <p>Skills: SQL Database (PostgreSQL, Microsoft SQL Server & PL/SQL), Python, PySpark, Scala, Databricks using Scala and PySpark</p>
-                        <p>Projects: POD Project: KYC EMI (PostgreSQL), ETL: Databricks (Migration of PL/SQL code into Scala or PySpark), CSR Project: Design and Building Database in PostgreSQL</p>
+                        <p>Skills: SQL Database (PostgreSQL, Microsoft SQL Server & PL/SQL), Python, PySpark, Scala,
+                            Databricks using Scala and PySpark</p>
+                        <p>Projects: POD Project: KYC EMI (PostgreSQL), ETL: Databricks (Migration of PL/SQL code into
+                            Scala or PySpark), CSR Project: Design and Building Database in PostgreSQL</p>
                     </div>
                     <div class="timeline-item">
                         <h3>Assistant Manager (Branch Team Leader)</h3>
                         <span>Shriram Finance Limited, Ballarpur Maharashtra India</span>
                         <span>Aug 2019 - Nov 2021</span>
-                        <p>Skills: Data Analysis, Management, Leadership, Teamwork, Microsoft Excel, Data Visualization Tools</p>
+                        <p>Skills: Data Analysis, Management, Leadership, Teamwork, Microsoft Excel, Data Visualization
+                            Tools</p>
                     </div>
                 </div>
             </div>
@@ -86,12 +208,16 @@
                     <div class="card">
                         <h3>Traffic Signs Recognition</h3>
                         <span>Mar 2022 - Aug 2022</span>
-                        <p>Developed a deep neural network model using Keras, Matplotlib, Scikit learn, Pandas, PIL, and image classification techniques to classify traffic signs present in the image into different categories.</p>
+                        <p>Developed a deep neural network model using Keras, Matplotlib, Scikit learn, Pandas, PIL, and
+                            image classification techniques to classify traffic signs present in the image into
+                            different categories.</p>
                     </div>
                     <div class="card">
                         <h3>Prototype of Relay-based Single Phase Voltage Stabilizer System</h3>
                         <span>Aug 2018 - Mar 2019</span>
-                        <p>Designed a cost-effective voltage stabilizer system for domestic equipment protection. Employed a reliable technology using a microcontroller for controlling the relay circuits.</p>
+                        <p>Designed a cost-effective voltage stabilizer system for domestic equipment protection.
+                            Employed a reliable technology using a microcontroller for controlling the relay circuits.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -118,7 +244,8 @@
             <div class="container">
                 <h2>Contact</h2>
                 <p>Email: <a href="mailto:ashishzope96@gmail.com">ashishzope96@gmail.com</a></p>
-                <p>LinkedIn: <a href="https://www.linkedin.com/in/ashish-zope-627628169/" target="_blank">Ashish's LinkedIn</a></p>
+                <p>LinkedIn: <a href="https://www.linkedin.com/in/ashish-zope-627628169/" target="_blank">Ashish's
+                        LinkedIn</a></p>
                 <p>Phone: +91 7744046830</p>
             </div>
         </section>
@@ -131,4 +258,5 @@
     <button id="back-to-top"><i class="fas fa-arrow-up"></i></button>
     <script src="script.js"></script>
 </body>
+
 </html>

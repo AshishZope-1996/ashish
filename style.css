@@ -1,16 +1,28 @@
-/* Additional Custom Styles */
+/* Resetting default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and container styles */
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #f4f4f4;
     color: #333;
     line-height: 1.6;
-    margin: 0;
-    padding: 0;
 }
 
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+/* Header styles */
 header {
     background-color: #025088;
-    /* Blue */
     color: white;
     padding: 1rem 0;
     position: fixed;
@@ -18,7 +30,6 @@ header {
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s;
 }
 
 .header-container {
@@ -31,28 +42,21 @@ header {
 }
 
 header h1 {
-    margin: 0;
     font-size: 1.8rem;
 }
 
+/* Navigation styles */
 nav ul {
     list-style: none;
-    padding: 0;
-    margin: 0;
     display: flex;
-    flex-wrap: wrap;
-}
-
-nav ul li {
-    margin: 0.5rem;
+    gap: 1rem;
 }
 
 nav ul li a {
     color: white;
-    padding: 0.5rem 1rem;
     text-decoration: none;
+    padding: 0.5rem 1rem;
     background-color: #139dff;
-    /* Blue */
     border-radius: 0.25rem;
     transition: background-color 0.3s;
 }
@@ -65,44 +69,39 @@ nav ul li a:hover {
     display: none;
     flex-direction: column;
     cursor: pointer;
+    gap: 0.3rem;
 }
 
 .hamburger div {
     width: 25px;
-    height: 2px;
+    height: 3px;
     background-color: white;
-    margin: 4px;
 }
 
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 6rem 1rem 2rem;
-    /* Adjusted padding for better mobile view */
-    box-sizing: border-box;
-}
-
+/* Section and card styles */
 .section {
-    background-color: white;
-    margin-bottom: 2rem;
+    margin: 5rem 0;
     padding: 2rem;
-    border-radius: 0.25rem;
+    background-color: white;
+    border-radius: 0.5rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, opacity 0.3s;
 }
 
 .section:hover {
     transform: translateY(-10px);
-    opacity: 0.9;
+    opacity: 0.95;
 }
 
-h2 {
-    color: #025088;
-    /* Blue */
-    font-size: 2rem;
-    margin-bottom: 1rem;
+.section h2 {
     text-align: center;
+    color: #025088;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.timeline-item {
+    margin-bottom: 1rem;
 }
 
 .timeline-item h3 {
@@ -114,16 +113,14 @@ h2 {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-    /* Reduced gap for better mobile view */
 }
 
 .card {
     background-color: white;
-    border-radius: 0.25rem;
+    border-radius: 0.5rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 1rem;
     flex: 1 1 calc(50% - 1rem);
-    /* Flexible width for better mobile view */
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
@@ -132,21 +129,26 @@ h2 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+.card img {
+    max-width: 100%;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Skills list styles */
 .skills-list {
-    list-style: none;
-    padding: 0;
     display: flex;
     flex-wrap: wrap;
+    gap: 1rem;
 }
 
 .skills-list li {
     background-color: white;
-    border-radius: 0.25rem;
+    border-radius: 0.5rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 0.5rem;
-    margin: 0.5rem;
     flex: 1 1 calc(50% - 1rem);
-    /* Flexible width for better mobile view */
+    text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
@@ -155,9 +157,25 @@ h2 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+.skills-list li img {
+    max-width: 100%;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Contact section styles */
+#contact p a {
+    color: #025088;
+    text-decoration: none;
+}
+
+#contact p a:hover {
+    text-decoration: underline;
+}
+
+/* Footer styles */
 footer {
     background-color: #FF9933;
-    /* Saffron */
     color: white;
     text-align: center;
     padding: 1rem 0;
@@ -205,15 +223,17 @@ footer {
 
     nav ul {
         flex-direction: column;
+        gap: 0;
     }
 
     nav ul li {
-        margin: 1rem 0;
+        margin: 0;
         text-align: center;
     }
 
     .header-container {
         flex-direction: column;
+        align-items: flex-start;
     }
 
     .section {

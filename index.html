@@ -15,23 +15,34 @@
             background-color: #f4f4f4;
             color: #333;
             line-height: 1.6;
+            margin: 0;
+            padding: 0;
         }
 
         header {
             background-color: #025088;
-            /* Saffron */
+            /* Blue */
             color: white;
-            padding: 2rem 0;
-            text-align: center;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         header h1 {
             margin: 0;
-            font-size: 2.5rem;
-        }
-
-        header p {
-            margin: 0.5rem 0 0;
+            font-size: 1.8rem;
         }
 
         nav ul {
@@ -39,7 +50,6 @@
             padding: 0;
             margin: 0;
             display: flex;
-            justify-content: center;
             flex-wrap: wrap;
         }
 
@@ -51,35 +61,53 @@
             color: white;
             padding: 0.5rem 1rem;
             text-decoration: none;
-            background-color: #8a8a8a;
-            /* Green */
+            background-color: #139dff;
+            /* Blue */
             border-radius: 0.25rem;
             transition: background-color 0.3s;
         }
 
         nav ul li a:hover {
-            background-color: #575757;
+            background-color: #105f99;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 2px;
+            background-color: white;
+            margin: 4px;
         }
 
         .container {
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem 1rem;
-            /* Adjusted padding for better mobile view */
+            padding: 6rem 1rem 2rem;
+            /* Adjusted padding for better view */
             box-sizing: border-box;
         }
 
         h2 {
-            color: #139dff;
-            /* Saffron */
+            color: #025088;
+            /* Blue */
             font-size: 2rem;
             margin-bottom: 1rem;
+            text-align: center;
         }
 
         .timeline-item h3 {
             font-size: 1.5rem;
             margin-bottom: 0.5rem;
+        }
+
+        .timeline-item {
+            margin-bottom: 1.5rem;
         }
 
         .project-cards {
@@ -117,21 +145,84 @@
 
         footer {
             background-color: #FF9933;
-            /* Saffron */
+            /* Orange */
             color: white;
             text-align: center;
             padding: 1rem 0;
             margin-top: 2rem;
+        }
+
+        .section {
+            background: white;
+            border-radius: 0.25rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .section:nth-child(odd) {
+            background-color: #f0f0f0;
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            nav {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+            }
+
+            nav ul {
+                width: 100%;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav ul li {
+                width: 100%;
+            }
+
+            nav ul li a {
+                display: block;
+                width: 100%;
+                padding: 1rem;
+                text-align: left;
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            .container {
+                padding: 8rem 1rem 2rem;
+            }
+
+            .card,
+            .skills-list li {
+                flex: 1 1 100%;
+            }
         }
     </style>
 </head>
 
 <body>
     <header>
-        <div class="container">
+        <div class="header-container">
             <h1>Ashish Sunil Zope</h1>
-            <p>Data Engineer @ Bajaj Finserv Ltd</p>
-            <nav>
+            <div class="hamburger" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <nav id="nav">
                 <ul>
                     <li><a href="#about">About</a></li>
                     <li><a href="#education">Education</a></li>
@@ -144,14 +235,14 @@
         </div>
     </header>
     <main>
-        <section id="about">
+        <section id="about" class="section">
             <div class="container">
                 <h2>About Me</h2>
                 <p>To secure a challenging position in the field of Data where I can utilize my skills and knowledge for
                     the growth of the organization and to enhance my professional skills.</p>
             </div>
         </section>
-        <section id="education">
+        <section id="education" class="section">
             <div class="container">
                 <h2>Education</h2>
                 <div class="timeline">
@@ -178,7 +269,7 @@
                 </div>
             </div>
         </section>
-        <section id="experience">
+        <section id="experience" class="section">
             <div class="container">
                 <h2>Experience</h2>
                 <div class="timeline">
@@ -201,7 +292,7 @@
                 </div>
             </div>
         </section>
-        <section id="projects">
+        <section id="projects" class="section">
             <div class="container">
                 <h2>Academic Projects</h2>
                 <div class="project-cards">
@@ -222,7 +313,7 @@
                 </div>
             </div>
         </section>
-        <section id="skills">
+        <section id="skills" class="section">
             <div class="container">
                 <h2>Skills</h2>
                 <ul class="skills-list">
@@ -240,7 +331,7 @@
                 </ul>
             </div>
         </section>
-        <section id="contact">
+        <section id="contact" class="section">
             <div class="container">
                 <h2>Contact</h2>
                 <p>Email: <a href="mailto:ashishzope96@gmail.com">ashishzope96@gmail.com</a></p>
@@ -256,7 +347,25 @@
         </div>
     </footer>
     <button id="back-to-top"><i class="fas fa-arrow-up"></i></button>
-    <script src="script.js"></script>
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('nav');
+            nav.classList.toggle('active');
+        }
+
+        // Back to top button functionality
+        const backToTopButton = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 100) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
 </body>
 
 </html>

@@ -4740,3 +4740,25 @@ td:last-child {
 .contact-list li {
 	padding-left: 0;
 }
+
+
+
+
+form {
+	background: #fff;
+	padding: 20px;
+	border-radius: 5px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+label {
+	display: block;
+	margin-bottom: 8px;
+	font-weight: bold;
+}
+input[type="text"], input[type="email"], input[type="tel"], textarea {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 10px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}

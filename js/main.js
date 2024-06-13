@@ -430,3 +430,36 @@ window.onclick = function(event) {
 
 
 // ------------------------------------------------------
+document.addEventListener("DOMContentLoaded", function() {
+    const blocks = document.querySelectorAll('.block');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    let currentBlock = 0;
+
+    // Function to show block by index
+    function showBlock(index) {
+        // Hide all blocks
+        blocks.forEach(block => block.classList.remove('active'));
+        // Show the selected block
+        blocks[index].classList.add('active');
+    }
+
+    // Show next block
+    function showNextBlock() {
+        currentBlock = (currentBlock + 1) % blocks.length;
+        showBlock(currentBlock);
+    }
+
+    // Show previous block
+    function showPrevBlock() {
+        currentBlock = (currentBlock - 1 + blocks.length) % blocks.length;
+        showBlock(currentBlock);
+    }
+
+    // Event listeners for buttons
+    nextBtn.addEventListener('click', showNextBlock);
+    prevBtn.addEventListener('click', showPrevBlock);
+
+    // Initial block show (optional)
+    showBlock(currentBlock);
+});

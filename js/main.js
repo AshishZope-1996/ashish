@@ -399,3 +399,31 @@ window.onclick = function(event) {
         document.getElementById('imagePopup').style.display = "none";
     }
 }
+
+document.getElementById('viewImageBtn1').onclick = function() {
+    document.getElementById('imagePopup1').style.display = "block";
+}
+
+document.querySelector('.closeBtn1').onclick = function() {
+    document.getElementById('imagePopup1').style.display = "none";
+}
+
+window.onclick = function(event) {
+    if (event.target == document.getElementById('imagePopup1')) {
+        document.getElementById('imagePopup1').style.display = "none";
+    }
+}
+
+document.getElementById('viewImageBtn2').onclick = function() {
+    document.getElementById('imagePopup2').style.display = "block";
+}
+
+document.querySelector('.closeBtn2').onclick = function() {
+    document.getElementById('imagePopup2').style.display = "none";
+}
+
+window.onclick = function(event) {
+    if (event.target == document.getElementById('imagePopup2')) {
+        document.getElementById('imagePopup2').style.display = "none";
+    }
+}

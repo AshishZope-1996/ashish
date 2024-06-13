@@ -4750,3 +4750,133 @@ textarea {
     text-decoration: none;
     cursor: pointer;
 }
+
+
+
+
+
+
+#viewImageBtn1 {
+    background-color: #ffb300;
+    color: black;
+    /* padding: 15px 30px; */
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#viewImageBtn1:hover {
+    background-color: #f5c657;
+}
+
+.popup1 {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.popupContent1 {
+    margin: 10% auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.closeBtn1 {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.closeBtn1:hover,
+.closeBtn1:focus {
+    color: #ffb300;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* ---------------------- */
+
+#viewImageBtn2 {
+    background-color: #ffb300;
+    color: black;
+    /* padding: 15px 30px; */
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#viewImageBtn2:hover {
+    background-color: #f5c657;
+}
+
+.popup2 {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.popupContent2 {
+    margin: 10% auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.closeBtn2 {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.closeBtn2:hover,
+.closeBtn2:focus {
+    color: #ffb300;
+    text-decoration: none;
+    cursor: pointer;
+}

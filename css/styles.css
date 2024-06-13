@@ -4880,44 +4880,51 @@ textarea {
     text-decoration: none;
     cursor: pointer;
 }
-
 /* ------------------------------------------------ */
 
-.blocks {
-    display: flex;
-    overflow-x: hidden;
+.slider {
+    position: relative;
+    width: 80%;
     max-width: 600px;
-    margin: 20px auto;
+    overflow: hidden;
+    border: 2px solid #ddd;
+    border-radius: 10px;
 }
 
-.block {
-    flex: 0 0 100%;
-    padding: 20px;
+.slides {
+    display: flex;
+    transition: transform 5s ease-in-out;
+    width: 300%;
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 40px;
+    text-align: center;
     background-color: #fff;
-    color: #333;
-    font-size: 24px;
-    transition: transform 0.5s ease;
+    border-right: 2px solid #ddd;
 }
 
-.block.active {
-    transform: translateX(0);
-}
-
-.prev-btn, .next-btn {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
+.pagination {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
 }
 
-.prev-btn {
-    left: 10px;
+.dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
 }
 
-.next-btn {
-    right: 10px;
+.dot.active {
+    background-color: #717171;
 }

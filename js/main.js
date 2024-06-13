@@ -384,3 +384,18 @@
     })();
 
 })(document.documentElement);
+
+
+document.getElementById('viewImageBtn').onclick = function() {
+    document.getElementById('imagePopup').style.display = "block";
+}
+
+document.querySelector('.closeBtn').onclick = function() {
+    document.getElementById('imagePopup').style.display = "none";
+}
+
+window.onclick = function(event) {
+    if (event.target == document.getElementById('imagePopup')) {
+        document.getElementById('imagePopup').style.display = "none";
+    }
+}

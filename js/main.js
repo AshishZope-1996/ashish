@@ -430,3 +430,23 @@ window.onclick = function(event) {
 
 
 // ------------------------------------------------------
+document.addEventListener('DOMContentLoaded', () => {
+    const customSlides = document.querySelector('.custom-slides');
+    const customImages = document.querySelectorAll('.custom-slide');
+    let customIndex = 0;
+    const customIntervalTime = 5000; // 5 seconds
+
+    function showNextCustomSlide() {
+        customIndex++;
+        if (customIndex >= customImages.length) {
+            customIndex = 0;
+        }
+        updateCustomSlidePosition();
+    }
+
+    function updateCustomSlidePosition() {
+        customSlides.style.transform = `translateX(${-customIndex * 100}%)`;
+    }
+
+    setInterval(showNextCustomSlide, customIntervalTime);
+});

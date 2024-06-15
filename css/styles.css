@@ -4928,3 +4928,89 @@ textarea {
 .dot.active {
     background-color: #717171;
 }
+/* -------------------------- */
+
+/* image slider code */
+
+
+.blog-slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #f0f0f0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.custom-slider {
+    width: 100%;
+    max-width: 800px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    background: white;
+}
+
+.custom-slides {
+    display: flex;
+    transition: transform 1s ease-in-out;
+    will-change: transform;
+}
+
+.custom-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.custom-slide img {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+}
+
+.custom-caption {
+    width: 90%;
+    max-width: 800px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.custom-caption h2 {
+    margin: 0 0 10px 0;
+    font-size: 1.5em;
+}
+
+.custom-caption p {
+    margin: 0;
+    font-size: 1em;
+}
+
+@keyframes fade {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+}
+
+.custom-slide img {
+    animation: fade 1.5s;
+}
+
+@media (max-width: 768px) {
+    .custom-caption {
+        font-size: 0.9em;
+        padding: 15px;
+    }
+
+    .custom-caption h2 {
+        font-size: 1.2em;
+    }
+}

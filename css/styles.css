@@ -4969,9 +4969,10 @@ textarea {
 }
 
 .custom-slide img {
-    width: 100%;
-    border-radius: 10px;
-    display: block;
+	width: 90%;
+	height: 100%; /* Fixed height for the images */
+	object-fit: cover; /* Ensures the image covers the container without distortion */
+	border-radius: 10px;
 }
 
 .custom-caption {

@@ -430,23 +430,32 @@ window.onclick = function(event) {
 
 
 // ------------------------------------------------------
-document.addEventListener('DOMContentLoaded', () => {
-    const customSlides = document.querySelector('.custom-slides');
-    const customImages = document.querySelectorAll('.custom-slide');
-    let customIndex = 0;
-    const customIntervalTime = 5000; // 5 seconds
+document.addEventListener('DOMContentLoaded', function () {
+    const slides = document.querySelectorAll('.custom-slide');
+    const prevButton = document.querySelector('.prev-slide');
+    const nextButton = document.querySelector('.next-slide');
+    let currentIndex = 0;
 
-    function showNextCustomSlide() {
-        customIndex++;
-        if (customIndex >= customImages.length) {
-            customIndex = 0;
+    function showSlide(index) {
+        const totalSlides = slides.length;
+        if (index >= totalSlides) {
+            currentIndex = 0;
+        } else if (index < 0) {
+            currentIndex = totalSlides - 1;
+        } else {
+            currentIndex = index;
         }
-        updateCustomSlidePosition();
+        const offset = -currentIndex * 100;
+        document.querySelector('.custom-slides').style.transform = `translateX(${offset}%)`;
     }
 
-    function updateCustomSlidePosition() {
-        customSlides.style.transform = `translateX(${-customIndex * 100}%)`;
-    }
+    prevButton.addEventListener('click', function () {
+        showSlide(currentIndex - 1);
+    });
 
-    setInterval(showNextCustomSlide, customIntervalTime);
+    nextButton.addEventListener('click', function () {
+        showSlide(currentIndex + 1);
+    });
+
+    showSlide(currentIndex);
 });

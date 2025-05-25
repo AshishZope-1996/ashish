@@ -29,6 +29,24 @@
         </div>
     </div>
 
+    <!-- Popup Message Start -->
+    <div id="popupMessage" class="popup">
+        <div class="popupContent">
+            <button class="closeBtn" id="closePopupBtn" aria-label="Close">&times;</button>
+            <img src="images/logo_ashish/ashish_logo.png" alt="Ashish Logo"
+                style="width:70px; margin-bottom:1rem; border-radius:50%; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+            <h2 style="margin-bottom:0.5rem; color:#0077b6;">Welcome to Ashish Zope's Portfolio!</h2>
+            <p style="font-size:1.1rem; color:#333; margin-bottom:1.5rem;">
+                Thank you for visiting.<br>
+                Explore my work and feel free to get in touch!
+            </p>
+            <a href="#about" class="popup-btn"
+                style="background:linear-gradient(90deg,#00b4d8,#48cae4);color:#fff;padding:0.7em 2em;border:none;border-radius:6px;font-weight:600;text-decoration:none;box-shadow:0 4px 16px rgba(0,180,216,0.15);transition:background 0.3s;">Learn
+                More</a>
+        </div>
+    </div>
+    <!-- Popup Message End -->
+
     <div id="page" class="s-pagewrap ss-home">
 
         <header class="s-header">
@@ -285,6 +303,98 @@
     </div>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
+    <div id="resumeDownloadedBox" style="display:none; position:fixed; z-index:10000; left:50%; top:8%; transform:translateX(-50%); background:linear-gradient(120deg,#caf0f8,#90e0ef); color:#0077b6; padding:1.3rem 2.2rem; border-radius:14px; box-shadow:0 8px 32px rgba(0,0,0,0.18); font-size:1.15rem; font-weight:600; text-align:center;">
+        <span style="font-size:1.5rem; margin-right:0.5rem;">&#10003;</span>
+        Resume downloaded successfully!
+    </div>
+    <!-- Add this modal just before </body> -->
+    <div id="resumeModal" style="display:none; position:fixed; z-index:10001; left:0; top:0; width:100vw; height:100vh; background:rgba(0,36,61,0.92); align-items:center; justify-content:center;">
+        <div style="position:relative; width:90vw; max-width:800px; height:90vh; margin:auto; background:#fff; border-radius:14px; box-shadow:0 8px 32px rgba(0,0,0,0.25); display:flex; flex-direction:column; align-items:center; justify-content:center;">
+            <button id="closeResumeModal"
+                style="
+                position: absolute;
+                top: 18px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: linear-gradient(135deg, #00b4d8, #48cae4);
+                color: #fff;
+                border: none;
+                font-size: 2.5rem;
+                font-weight: bold;
+                border-radius: 20px;
+                width: 64px;
+                height: 64px;
+                box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+                cursor: pointer;
+                z-index: 10;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: background 0.2s, transform 0.2s;
+                outline: none;
+            "
+            onmouseover="this.style.background='linear-gradient(135deg,#0077b6,#00b4d8)'"
+            onmouseout="this.style.background='linear-gradient(135deg,#00b4d8,#48cae4)'"
+            aria-label="Close PDF"
+        >&times;</button>
+        <iframe id="resumeFrame" src="" style="flex:1; width:100%; border:none; border-radius:0 0 14px 14px; margin-top:16px;"></iframe>
+    </div>
+</div>
+
+    <script>
+        // Show popup on page load
+        window.addEventListener('DOMContentLoaded', function () {
+            var popup = document.getElementById('popupMessage');
+            var closeBtn = document.getElementById('closePopupBtn');
+            var resumeBox = document.getElementById('resumeDownloadedBox');
+            var resumeModal = document.getElementById('resumeModal');
+            var resumeFrame = document.getElementById('resumeFrame');
+            var closeResumeModal = document.getElementById('closeResumeModal');
+            popup.style.display = 'block';
+
+            function forceDownloadResume() {
+                // Create a temporary link and trigger download
+                var link = document.createElement('a');
+                link.href = './images/MyCertificate/Resume.pdf';
+                link.download = 'Ashish_Zope_Resume.pdf';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+
+                // Show the resume downloaded box
+                resumeBox.style.display = 'block';
+                setTimeout(function () {
+                    resumeBox.style.display = 'none';
+                }, 3500);
+            }
+
+            function showResumeModal() {
+                resumeFrame.src = './images/MyCertificate/Resume.pdf';
+                resumeModal.style.display = 'flex';
+            }
+
+            closeBtn.onclick = function () {
+                popup.style.display = 'none';
+                forceDownloadResume();
+                showResumeModal();
+            };
+            window.onclick = function (event) {
+                if (event.target === popup) {
+                    popup.style.display = 'none';
+                    forceDownloadResume();
+                    showResumeModal();
+                }
+                if (event.target === resumeModal) {
+                    resumeModal.style.display = 'none';
+                    resumeFrame.src = '';
+                }
+            };
+            closeResumeModal.onclick = function () {
+                resumeModal.style.display = 'none';
+                resumeFrame.src = '';
+            };
+        });
+    </script>
 </body>
 
 </html>

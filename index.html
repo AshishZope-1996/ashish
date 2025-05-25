@@ -17,6 +17,138 @@
         document.documentElement.classList.remove('no-js');
         document.documentElement.classList.add('js');
     </script>
+    <!-- Add to your <head> or main CSS file -->
+    <style>
+        #resumeDownloadedBox {
+            display: none;
+            position: fixed;
+            z-index: 10000;
+            left: 50%;
+            top: 8%;
+            transform: translateX(-50%);
+            background: linear-gradient(120deg,#caf0f8,#90e0ef);
+            color: #0077b6;
+            padding: 1.3rem 2.2rem;
+            border-radius: 14px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+            font-size: 1.15rem;
+            font-weight: 600;
+            text-align: center;
+        }
+        #resumeModal {
+            display: none;
+            position: fixed;
+            z-index: 10001;
+            left: 0; top: 0;
+            width: 100vw; height: 100vh;
+            background: rgba(0,36,61,0.92);
+            align-items: center;
+            justify-content: center;
+        }
+        .resume-modal-content {
+            position: relative;
+            width: 96vw;
+            max-width: 1000px;
+            height: 94vh;
+            margin: auto;
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            justify-content: flex-start;
+            padding: 0;
+            overflow: hidden;
+        }
+        #resumeFrame {
+            flex: 1 1 auto;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 0 0 14px 14px;
+            margin: 0;
+            padding: 0;
+            background: #f8f9fa;
+            min-height: 0;
+        }
+        #closeResumeModal {
+            position: absolute;
+            top: 18px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #00b4d8, #48cae4);
+            color: #fff;
+            border: none;
+            font-size: 2.5rem;
+            font-weight: bold;
+            border-radius: 20px;
+            width: 64px;
+            height: 64px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+            cursor: pointer;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s, transform 0.2s;
+            outline: none;
+        }
+        /* Popup fade-in animation */
+        .popup {
+            animation: fadeInPopup 0.7s cubic-bezier(.68,-0.55,.27,1.55);
+        }
+        @keyframes fadeInPopup {
+            from { opacity: 0; transform: scale(0.8);}
+            to { opacity: 1; transform: scale(1);}
+        }
+
+        /* Resume Downloaded Box slide-down animation */
+        #resumeDownloadedBox {
+            animation: slideDownFade 0.7s;
+        }
+        @keyframes slideDownFade {
+            from { opacity: 0; transform: translate(-50%, -40px);}
+            to { opacity: 1; transform: translate(-50%, 0);}
+        }
+
+        /* Modal fade-in and scale animation */
+        #resumeModal {
+            animation: fadeInModal 0.5s;
+        }
+        @keyframes fadeInModal {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .resume-modal-content {
+            animation: scaleInModal 0.5s cubic-bezier(.68,-0.55,.27,1.55);
+        }
+        @keyframes scaleInModal {
+            from { transform: scale(0.85); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        /* Close button bounce animation on hover */
+        #closeResumeModal:hover, #closeResumeModal:focus {
+            animation: bounceBtn 0.4s;
+        }
+        @keyframes bounceBtn {
+            0% { transform: translateX(-50%) scale(1);}
+            30% { transform: translateX(-50%) scale(1.15);}
+            60% { transform: translateX(-50%) scale(0.95);}
+            100% { transform: translateX(-50%) scale(1);}
+        }
+
+        /* Animate popup close button */
+        .closeBtn {
+            transition: transform 0.3s;
+        }
+        .closeBtn:hover, .closeBtn:focus {
+            transform: scale(0.8) rotate(180deg);
+            background: #0077b6;
+            color: #fff;
+        }
+    </style>
 </head>
 
 <body id="top">
@@ -303,44 +435,19 @@
     </div>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
-    <div id="resumeDownloadedBox" style="display:none; position:fixed; z-index:10000; left:50%; top:8%; transform:translateX(-50%); background:linear-gradient(120deg,#caf0f8,#90e0ef); color:#0077b6; padding:1.3rem 2.2rem; border-radius:14px; box-shadow:0 8px 32px rgba(0,0,0,0.18); font-size:1.15rem; font-weight:600; text-align:center;">
+    <div id="resumeDownloadedBox" role="status" aria-live="polite">
         <span style="font-size:1.5rem; margin-right:0.5rem;">&#10003;</span>
         Resume downloaded successfully!
     </div>
-    <!-- Add this modal just before </body> -->
-    <div id="resumeModal" style="display:none; position:fixed; z-index:10001; left:0; top:0; width:100vw; height:100vh; background:rgba(0,36,61,0.92); align-items:center; justify-content:center;">
-        <div style="position:relative; width:90vw; max-width:800px; height:90vh; margin:auto; background:#fff; border-radius:14px; box-shadow:0 8px 32px rgba(0,0,0,0.25); display:flex; flex-direction:column; align-items:center; justify-content:center;">
-            <button id="closeResumeModal"
-                style="
-                position: absolute;
-                top: 18px;
-                left: 50%;
-                transform: translateX(-50%);
-                background: linear-gradient(135deg, #00b4d8, #48cae4);
-                color: #fff;
-                border: none;
-                font-size: 2.5rem;
-                font-weight: bold;
-                border-radius: 20px;
-                width: 64px;
-                height: 64px;
-                box-shadow: 0 4px 16px rgba(0,0,0,0.18);
-                cursor: pointer;
-                z-index: 10;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                transition: background 0.2s, transform 0.2s;
-                outline: none;
-            "
-            onmouseover="this.style.background='linear-gradient(135deg,#0077b6,#00b4d8)'"
-            onmouseout="this.style.background='linear-gradient(135deg,#00b4d8,#48cae4)'"
-            aria-label="Close PDF"
-        >&times;</button>
-        <iframe id="resumeFrame" src="" style="flex:1; width:100%; border:none; border-radius:0 0 14px 14px; margin-top:16px;"></iframe>
-    </div>
-</div>
 
+    <div id="resumeModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="resumeTitle">
+        <div class="resume-modal-content">
+            <button id="closeResumeModal" aria-label="Close PDF" tabindex="0">&times;</button>
+            <iframe id="resumeFrame" src="" title="Resume PDF"></iframe>
+        </div>
+    </div>
+
+    <!-- Add this modal just before </body> -->
     <script>
         // Show popup on page load
         window.addEventListener('DOMContentLoaded', function () {
@@ -393,6 +500,13 @@
                 resumeModal.style.display = 'none';
                 resumeFrame.src = '';
             };
+            // Accessibility: allow ESC to close modal
+            document.addEventListener('keydown', function(e) {
+                if (resumeModal.style.display === 'flex' && (e.key === 'Escape' || e.key === 'Esc')) {
+                    resumeModal.style.display = 'none';
+                    resumeFrame.src = '';
+                }
+            });
         });
     </script>
 </body>
